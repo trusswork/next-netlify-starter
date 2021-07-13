@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
-import Dropdown from '../Components/Dropdown'
-import Header from '../Components/Header'
-import Herosection from '../Components/Herosection'
-import Footer from '../Components/Footer'
+import Dropdown from '../components/Dropdown'
+import Header from '../components/Header'
+import Herosection from '../components/Herosection'
+import Footer from '../components/Footer'
 
 export default function Home() {
 
