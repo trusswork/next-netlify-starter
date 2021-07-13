@@ -1,23 +1,48 @@
+import { useState, useEffect } from 'react'
 import Head from 'next/head'
-import Header from '@components/Header'
-import Footer from '@components/Footer'
+import Image from 'next/image'
+import Dropdown from '../Components/Dropdown'
+import Header from '../Components/Header'
+import Herosection from '../Components/Herosection'
+import Footer from '../Components/Footer'
 
 export default function Home() {
+
+  const [isOpen, setIsOpen] = useState(false)
+
+  const toggle = () => {
+    setIsOpen(!isOpen)
+  }
+
+  useEffect(() => {
+    const hideMenu = () => {
+      if (window.innerWidth > 768 && isOpen) {
+        setIsOpen(false)
+        console.log("i Resized")
+      }
+    }
+    window.addEventListener('resize', hideMenu)
+    return () => {
+      removeEventListener('resize', hideMenu)
+    }
+  })
+
   return (
-    <div className="container">
+    <div className="" >
       <Head>
-        <title>Next.js Starter!</title>
+        <title>TIZIKI</title>
+        <meta name="description" content="Made by Kenyans for Everyone." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
       <main>
-        <Header title="Welcome to my app!" />
-        <p className="description">
-          Get started by editing <code>pages/index.js</code>
-        </p>
+        <Header toggle={toggle} />
+        <Dropdown toggle={toggle} isOpen={isOpen} />
+        <Herosection />
+        <Footer />
       </main>
 
-      <Footer />
+
+
     </div>
   )
 }
