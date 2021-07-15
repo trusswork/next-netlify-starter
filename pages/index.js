@@ -5,10 +5,14 @@ import Dropdown from '../components/Dropdown'
 import Header from '../components/Header'
 import Herosection from '../components/Herosection'
 import Footer from '../components/Footer'
+import { useSession } from 'next-auth/client'
+import { useRouter } from 'next/router'
 
 export default function Home() {
-
+  const [session, loading] = useSession();
   const [isOpen, setIsOpen] = useState(false)
+
+  const router = useRouter();
 
   const toggle = () => {
     setIsOpen(!isOpen)
@@ -26,6 +30,14 @@ export default function Home() {
       removeEventListener('resize', hideMenu)
     }
   })
+  useEffect(() => {
+    if (session) {
+      router.push('/home')
+    } else {
+      router.push('/')
+    }
+
+  }, [session])
 
   return (
     <div className="" >

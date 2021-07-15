@@ -4,7 +4,7 @@ import { signIn, signOut, useSession } from 'next-auth/client'
 
 function Header({ toggle }) {
 
-    const [session] = useSession();
+    const [session, loading] = useSession();
 
 
     return (
