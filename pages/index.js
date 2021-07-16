@@ -50,7 +50,7 @@ export default function Home() {
         <Header toggle={toggle} />
         <Dropdown toggle={toggle} isOpen={isOpen} />
         <Herosection />
-        <Footer />
+        {/* <Footer /> */}
       </main>
 
 
