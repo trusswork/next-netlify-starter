@@ -10,24 +10,21 @@
     @apply ml-5;
   }
   .footer-left {
-    @apply flex-[30%] max-w-[500px] flex items-center text-white ;
+    @apply flex-[30%] max-w-[500px] flex items-center text-white;
   }
   .footer-center {
-    @apply  py-0 px-[100px] text-white items-center flex justify-between;
+    @apply py-0 px-[100px] text-white items-center flex justify-between;
   }
   .footer-right {
-    @apply flex-[30%] flex justify-between items-center text-white ;
+    @apply flex-[30%] flex justify-between items-center text-white;
   }
-  .footer-icon{
-      @apply hover:scale-125 transition duration-200;
+  .footer-icon {
+    @apply hover:scale-125 transition duration-200;
   }
-  .footer-large{
+  .footer-large {
     @apply bg-red-500 rounded-full h-8 hover:scale-125 transition duration-200;
   }
-  .player-body{
-    @apply flex 
+  .player-body {
+    @apply flex;
   }
 }
-
-
-
